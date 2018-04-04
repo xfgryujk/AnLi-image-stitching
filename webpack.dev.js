@@ -5,6 +5,6 @@ module.exports = merge(common, {
   mode: 'development',
 
   devServer: {
-    contentBase: './dist'
+    contentBase: './docs'
   }
 })
