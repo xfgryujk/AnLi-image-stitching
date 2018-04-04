@@ -1,0 +1,34 @@
+{
+  "name": "anli-image-stitching",
+  "version": "1.0.0",
+  "description": "A image stitching web app, which aims to stitch screenshots in video with subtitles.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server --open --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js --progress"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/xfgryujk/AnLi-image-stitching.git"
+  },
+  "keywords": [
+    "image-stitching"
+  ],
+  "author": "xfgryujk",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xfgryujk/AnLi-image-stitching/issues"
+  },
+  "homepage": "https://xfgryujk.github.io/AnLi-image-stitching",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "html-webpack-plugin": "^3.2.0",
+    "standard": "^11.0.1",
+    "webpack": "^4.4.1",
+    "webpack-cli": "^2.0.13",
+    "webpack-merge": "^4.1.2"
+  }
+}
