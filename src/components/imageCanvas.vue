@@ -63,7 +63,7 @@ export default {
           ctx.drawImage(item.image, 0, y, this.width, dh)
         y += dh
       }
-      
+
       URL.revokeObjectURL(this.imageSrc)
       canvas.toBlob(blob => {
         this.imageSrc = URL.createObjectURL(blob)
