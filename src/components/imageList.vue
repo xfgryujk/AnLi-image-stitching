@@ -50,14 +50,14 @@ export default {
   },
   methods: {
     onDragOver(event) {
-      for (let type of event.dataTransfer.types) {
-        if (type != 'Files')
+      for (let i = 0; i < event.dataTransfer.types.length; i++) {
+        if (event.dataTransfer.types[i] != 'Files')
           return
       }
       event.preventDefault()
     },
     acceptFiles(files) {
-      for (let file of files) {
+      for (let i = 0; i < files.length; i++) {
         let image = new Image
         this.loadingImages.push(image)
         let that = this
@@ -68,7 +68,7 @@ export default {
             that.$emit('update:items', that.items.slice())
           }
         }
-        image.src = URL.createObjectURL(file)
+        image.src = URL.createObjectURL(files[i])
 
         this.items.push({
           image: image,

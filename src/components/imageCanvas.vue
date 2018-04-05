@@ -41,7 +41,6 @@ export default {
       let canvas = this.$refs.canvas;
       [canvas.width, canvas.height] = [this.width, this.height]
       if (canvas.height == 0) {
-        URL.revokeObjectURL(this.imageSrc)
         this.imageSrc = ''
         return
       }
@@ -64,10 +63,7 @@ export default {
         y += dh
       }
 
-      URL.revokeObjectURL(this.imageSrc)
-      canvas.toBlob(blob => {
-        this.imageSrc = URL.createObjectURL(blob)
-      })
+      this.imageSrc = canvas.toDataURL()
     }
   }
 }
