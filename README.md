@@ -5,4 +5,4 @@ A image stitching web app, which aims to stitch screenshots in video with subtit
 
 [Online demo](https://xfgryujk.github.io/AnLi-image-stitching/)
 
-![demo](https://github.com/xfgryujk/WinCustomDesktop/blob/master/demo/result.png)
+![demo](https://github.com/xfgryujk/AnLi-image-stitching/blob/master/demo/result.png)
