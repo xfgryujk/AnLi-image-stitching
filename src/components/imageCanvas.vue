@@ -17,8 +17,9 @@ export default {
   computed: {
     height() {
       let height = 0
-      for (let item of this.imageItems)
+      for (let item of this.imageItems) {
         height += this.getImageHeightToDraw(item)
+      }
       return height
     }
   },
@@ -33,8 +34,9 @@ export default {
   methods: {
     getImageHeightToDraw(item) {
       let [width, height] = [item.image.width, item.image.height]
-      if (item.isSubtitleFrame)
+      if (item.isSubtitleFrame) {
         height = this.subtitleTop < this.subtitleBottom ? (this.subtitleBottom - this.subtitleTop) * item.image.height : 0;
+      }
       return height * this.width / width || 0
     },
     draw() {
@@ -49,17 +51,18 @@ export default {
       let y = 0
       for (let item of this.imageItems) {
         let dh = this.getImageHeightToDraw(item)
-        if (dh == 0)
+        if (dh == 0) {
           continue
+        }
         
         if (item.isSubtitleFrame) {
           let sy = this.subtitleTop * item.image.height
           let sh = (this.subtitleBottom - this.subtitleTop) * item.image.height
           ctx.drawImage(item.image, 0, sy, item.image.width, sh,
                         0, y, this.width, dh)
-        }
-        else
+        } else {
           ctx.drawImage(item.image, 0, y, this.width, dh)
+        }
         y += dh
       }
 

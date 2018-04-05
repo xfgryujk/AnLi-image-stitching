@@ -7,8 +7,8 @@
             <b-img :src="item.image.src" fluid />
           </b-col>
           <b-col sm="8">
-            <b-form-checkbox v-model="item.isSubtitleFrame">Subtitle frame</b-form-checkbox>
-            <b-button variant="danger" @click="removeItem(index)">Remove</b-button>
+            <b-form-checkbox v-model="item.isSubtitleFrame">{{ $t('imageList.subtitleFrame') }}</b-form-checkbox>
+            <b-button variant="danger" @click="removeItem(index)">{{ $t('imageList.remove') }}</b-button>
           </b-col>
         </b-row>
       </b-card>
@@ -17,8 +17,8 @@
     <b-card>
       <div class="add-file" @dragover="onDragOver" @drop.prevent="acceptFiles($event.dataTransfer.files)">
         <p>
-          Add images by dropping them here or
-          <b-link @click="$refs.fileInput.click()">selecting them</b-link>
+          {{ $t('imageList.addImages') }}
+          <b-link @click="$refs.fileInput.click()">{{ $t('imageList.selectImages') }}</b-link>
         </p>
         <input type="file" ref="fileInput" @change="acceptFiles($event.target.files)" accept="image/jpg,image/jpeg,image/png" style="display: none;" multiple="multiple">
       </div>
@@ -51,8 +51,9 @@ export default {
   methods: {
     onDragOver(event) {
       for (let i = 0; i < event.dataTransfer.types.length; i++) {
-        if (event.dataTransfer.types[i] != 'Files')
+        if (event.dataTransfer.types[i] != 'Files') {
           return
+        }
       }
       event.preventDefault()
     },

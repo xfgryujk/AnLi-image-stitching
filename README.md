@@ -1,7 +1,7 @@
 AnLi-image-stitching
 =========
 
-A image stitching web app, which aims to stitch screenshots in video with subtitles. It stitches images in the form of "key frames + subtitle frames".
+An image stitching web app, which aims to stitch screenshots in video with subtitles. It stitches images in the form of "key frames + subtitle frames".
 
 [Online demo](https://xfgryujk.github.io/AnLi-image-stitching/)
 

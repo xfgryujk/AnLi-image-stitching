@@ -1,0 +1,23 @@
+{
+    "navbar": {
+        "about": "关于",
+        "aboutContent1": "AnLi是针对带字幕的视频的拼图web app，没错，它就是用来安利番剧的。它可以把视频截图拼成“关键帧+字幕帧”的形式。",
+        "aboutContent2": "使用方法：拖放或选择图片文件来添加图片；可以拖拽已添加的图片来排序；设置好字幕帧和图片宽度等参数后就会自动生成结果图片。",
+        "aboutContent3": "图片生成完全在前端完成，感谢HTML5、vue、BootstrapVue和Github Pages。只在Chrome和Edge下测试过，如果不能用请使用最新的Chrome浏览器。",
+        "aboutContent4": "作者：xfgryujk。",
+        "getSourceCode": "获取源码"
+    },
+    "app": {
+        "images": "图片",
+        "result": "结果",
+        "imageWidth": "图片宽度：",
+        "subtitleTop": "字幕顶部位置(%)：",
+        "subtitleBottom": "字幕底部位置(%)："
+    },
+    "imageList": {
+        "subtitleFrame": "字幕帧",
+        "remove": "删除",
+        "addImages": "将图片文件拖到这里添加图片或",
+        "selectImages": "选择文件"
+    }
+}

@@ -1,15 +1,15 @@
 <template>
   <b-container class="content">
-    <h1>Images</h1>
+    <h1>{{ $t('app.images') }}</h1>
     <image-list :items.sync="imageItems"></image-list>
 
-    <h1>Result</h1>
+    <h1>{{ $t('app.result') }}</h1>
     <b-card>
-      <label for="width-input">Image width:</label>
+      <label for="width-input">{{ $t('app.imageWidth') }}</label>
       <b-form-input type="number" id="width-input" v-model="imageWidth"></b-form-input>
-      <label for="subtitle-top">Subtitle top posision (%):</label>
+      <label for="subtitle-top">{{ $t('app.subtitleTop') }}</label>
       <b-form-input type="number" id="subtitle-top" v-model="subtitleTop"></b-form-input>
-      <label for="subtitle-bottom">Subtitle bottom posision (%):</label>
+      <label for="subtitle-bottom">{{ $t('app.subtitleBottom') }}</label>
       <b-form-input type="number" id="subtitle-bottom" v-model="subtitleBottom"></b-form-input>
 
       <center class="result-image">
