@@ -5,7 +5,7 @@
 <script>
 export default {
   name: 'image-canvas',
-  props: ['images'],
+  props: ['imageItems'],
   data() {
     return {
         width: 300,
@@ -13,12 +13,12 @@ export default {
     }
   },
   watch: {
-    images(val) {
+    imageItems(val) {
       let ctx = this.$refs.canvas.getContext('2d')
-      for (let img of val) {
-          ctx.drawImage(img, 0, 0) // test
+      for (let item of val) {
+          ctx.drawImage(item.image, 0, 0) // test
       }
     }
-  }
+  },
 }
 </script>

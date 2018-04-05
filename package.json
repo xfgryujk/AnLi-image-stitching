@@ -39,6 +39,7 @@
   },
   "dependencies": {
     "bootstrap-vue": "^2.0.0-rc.6",
-    "vue": "^2.5.16"
+    "vue": "^2.5.16",
+    "vuedraggable": "^2.16.0"
   }
 }

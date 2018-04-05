@@ -1,8 +1,10 @@
 <template>
-  <div>
-    <image-list @imagesUpdate="images => this.images = images"></image-list>
-    <image-canvas :images="images"></image-canvas>
-  </div>
+  <b-container class="content">
+    <h1>Images</h1>
+    <image-list :items.sync="imageItems"></image-list>
+    <h1>Result</h1>
+    <image-canvas :imageItems="imageItems"></image-canvas>
+  </b-container>
 </template>
 
 <script>
@@ -17,8 +19,16 @@ export default {
   },
   data() {
     return {
-      images: [] // Array of Image
+      imageItems: []
     }
   }
 }
 </script>
+
+<style scoped>
+.content h1 {
+  padding-top: 25px;
+  padding-bottom: 15px;
+}
+</style>
+
