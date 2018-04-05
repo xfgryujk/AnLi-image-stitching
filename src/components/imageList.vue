@@ -8,7 +8,7 @@
           </b-col>
           <b-col sm="8">
             <b-form-checkbox v-model="item.isSubtitleFrame">Subtitle frame</b-form-checkbox>
-            <b-button variant="danger" @click="items.splice(index, 1)">Remove</b-button>
+            <b-button variant="danger" @click="removeItem(index)">Remove</b-button>
           </b-col>
         </b-row>
       </b-card>
@@ -43,8 +43,9 @@ export default {
   watch: {
     items(val) {
       // Make sure all images is loaded
-      if (this.loadingImages.length == 0)
-        this.$emit('update:items', val)
+      if (this.loadingImages.length == 0) {
+        this.$emit('update:items', val.slice())
+      }
     }
   },
   methods: {
@@ -63,8 +64,9 @@ export default {
         image.onload = image.onerror = function() {
           that.loadingImages.splice(that.loadingImages.indexOf(this), 1)
           // Make sure all images is loaded
-          if (that.loadingImages.length == 0)
-            that.$emit('update:items', that.items)
+          if (that.loadingImages.length == 0) {
+            that.$emit('update:items', that.items.slice())
+          }
         }
         image.src = URL.createObjectURL(file)
 
@@ -73,6 +75,10 @@ export default {
           isSubtitleFrame: false
         })
       }
+    },
+    removeItem(index) {
+      URL.revokeObjectURL(this.items[index].image.src)
+      this.items.splice(index, 1)
     }
   }
 }
