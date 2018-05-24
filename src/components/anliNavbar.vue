@@ -6,16 +6,7 @@
       <b-navbar-nav>
         <b-nav-item href="#" v-b-modal.about-modal>{{ $t('navbar.about') }}</b-nav-item>
           <b-modal id="about-modal" centered ok-only :title="$t('navbar.about')">
-            <p>
-              {{ $t('navbar.aboutContent1') }}
-              <a href="https://raw.githubusercontent.com/xfgryujk/AnLi-image-stitching/master/demo/result.png">demo</a>
-            </p>
-            <p>{{ $t('navbar.aboutContent2') }}</p>
-            <p>{{ $t('navbar.aboutContent3') }}</p>
-            <p>
-              {{ $t('navbar.aboutContent4') }}
-              <a href="https://github.com/xfgryujk/AnLi-image-stitching">{{ $t('navbar.getSourceCode') }}</a>
-            </p>
+            <div v-html="$t('navbar.aboutContent')"></div>
           </b-modal>
       </b-navbar-nav>
 

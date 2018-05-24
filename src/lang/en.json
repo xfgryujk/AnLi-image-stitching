@@ -1,11 +1,7 @@
 {
     "navbar": {
         "about": "About",
-        "aboutContent1": "AnLi is an image stitching web app, which aims to stitch screenshots in video with subtitles. It stitches images in the form of \"key frames + subtitle frames\".",
-        "aboutContent2": "Usage: drop or select image files to add images. You can drag added images to sort. Set the subtitle frames, image width and other parameters, and it will generate the result image.",
-        "aboutContent3": "Thanks to HTML5, vue, BootstrapVue and Github Pages. I have tested it only on Chrome and Edge. If it does not work, please use the latest Chrome.",
-        "aboutContent4": "Made by xfgryujk.",
-        "getSourceCode": "Get source code"
+        "aboutContent": "AnLi is an image stitching web app, which aims to stitch screenshots in video with subtitles. It stitches images in the form of \"key frames + subtitle frames\". <a target=\"_blank\" href=\"https://raw.githubusercontent.com/xfgryujk/AnLi-image-stitching/master/demo/result.png\">demo</a></p><p>Usage: drop or select image files to add images. You can drag added images to sort. Set the subtitle frames, image width and other parameters, and it will generate the result image.</p><p>Thanks to HTML5, Vue, BootstrapVue and GitHSub Pages. I have tested it only on Chrome and Edge. If it does not work, please use the latest Chrome.</p><p>Made by xfgryujk. <a target=\"_blank\" href=\"https://github.com/xfgryujk/AnLi-image-stitching\">Get source code</a></p>"
     },
     "app": {
         "images": "Images",
