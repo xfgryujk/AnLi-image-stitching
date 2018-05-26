@@ -22,6 +22,8 @@
         </p>
         <input type="file" ref="fileInput" @change="acceptFiles($event.target.files)" accept="image/jpg,image/jpeg,image/png" style="display: none;" multiple="multiple">
       </div>
+      <b-button variant="danger" @click="clearItem()">{{ $t('imageList.clear') }}</b-button>
+      <b-button variant="primary" @click="inverseIsSubtitle()">{{ $t('imageList.inverse') }}</b-button>
     </b-card>
   </div>
 </template>
@@ -80,6 +82,17 @@ export default {
     removeItem(index) {
       URL.revokeObjectURL(this.items[index].image.src)
       this.items.splice(index, 1)
+    },
+    clearItem() {
+      for (let item of this.items) {
+        URL.revokeObjectURL(item.image.src)
+      }
+      this.items = []
+    },
+    inverseIsSubtitle() {
+      for (let item of this.items) {
+        item.isSubtitleFrame = !item.isSubtitleFrame
+      }
     }
   }
 }
@@ -92,6 +105,7 @@ export default {
 }
 
 .add-file {
+  margin-bottom: 10px;
   height: 65px;
   border: 2px dashed #ccc;
   background-color: #fafbfc;

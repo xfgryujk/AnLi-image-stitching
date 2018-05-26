@@ -8,12 +8,15 @@
         "result": "结果",
         "imageWidth": "图片宽度：",
         "subtitleTop": "字幕顶部位置(%)：",
-        "subtitleBottom": "字幕底部位置(%)："
+        "subtitleBottom": "字幕底部位置(%)：",
+        "save": "保存"
     },
     "imageList": {
         "subtitleFrame": "字幕帧",
         "remove": "删除",
         "addImages": "将图片文件拖到这里添加图片或",
-        "selectImages": "选择文件"
+        "selectImages": "选择文件",
+        "clear": "清除图片",
+        "inverse": "反选字幕帧"
     }
 }

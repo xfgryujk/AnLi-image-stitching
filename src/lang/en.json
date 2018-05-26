@@ -8,12 +8,15 @@
         "result": "Result",
         "imageWidth": "Image width:",
         "subtitleTop": "Subtitle top posision (%):",
-        "subtitleBottom": "Subtitle bottom posision (%):"
+        "subtitleBottom": "Subtitle bottom posision (%):",
+        "save": "Save"
     },
     "imageList": {
         "subtitleFrame": "Subtitle frame",
         "remove": "Remove",
         "addImages": "Add images by dropping them here or",
-        "selectImages": "selecting them"
+        "selectImages": "selecting them",
+        "clear": "Clear",
+        "inverse": "Inverse subtitle selections"
     }
 }

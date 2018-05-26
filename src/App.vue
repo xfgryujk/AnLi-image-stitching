@@ -11,9 +11,10 @@
       <b-form-input type="number" id="subtitle-top" v-model="subtitleTop"></b-form-input>
       <label for="subtitle-bottom">{{ $t('app.subtitleBottom') }}</label>
       <b-form-input type="number" id="subtitle-bottom" v-model="subtitleBottom"></b-form-input>
+      <b-button variant="primary" @click="saveImage()" :disabled="!resultImageSrc">{{ $t('app.save') }}</b-button>
 
       <center class="result-image">
-        <image-canvas :imageItems="imageItems" :width="imageWidth" :subtitleTop="subtitleTopFloat" :subtitleBottom="subtitleBottomFloat"></image-canvas>
+        <image-canvas :imageItems="imageItems" :width="imageWidth" :subtitleTop="subtitleTopFloat" :subtitleBottom="subtitleBottomFloat" :imageSrc.sync="resultImageSrc"></image-canvas>
       </center>
     </b-card>
   </b-container>
@@ -22,6 +23,7 @@
 <script>
 import imageList from './components/imageList'
 import imageCanvas from './components/imageCanvas'
+import download from 'downloadjs'
 
 export default {
   name: 'app',
@@ -34,7 +36,8 @@ export default {
       imageItems: [],
       imageWidth: 640,
       subtitleTop: 90,
-      subtitleBottom: 100
+      subtitleBottom: 100,
+      resultImageSrc: ''
     }
   },
   computed: {
@@ -45,6 +48,11 @@ export default {
     subtitleBottomFloat() {
       let result = this.subtitleBottom / 100
       return (0 <= result && result <= 1) ? result : 1
+    }
+  },
+  methods: {
+    saveImage() {
+      download(this.resultImageSrc, 'result.png')
     }
   }
 }
@@ -59,6 +67,10 @@ export default {
 .content h1 {
   padding-top: 15px;
   padding-bottom: 15px;
+}
+
+button {
+  margin-top: 15px;
 }
 
 .result-image {

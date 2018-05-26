@@ -46,6 +46,7 @@ export default {
       [canvas.width, canvas.height] = [this.width, this.height]
       if (canvas.height == 0) {
         this.imageSrc = ''
+        this.$emit('update:imageSrc', this.imageSrc)
         return
       }
 
@@ -69,6 +70,7 @@ export default {
       }
 
       this.imageSrc = canvas.toDataURL()
+      this.$emit('update:imageSrc', this.imageSrc)
     }, 500)
   }
 }
