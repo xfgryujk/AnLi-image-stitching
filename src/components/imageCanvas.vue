@@ -6,6 +6,8 @@
 </template>
 
 <script>
+import _ from 'lodash'
+
 export default {
   name: 'image-canvas',
   props: ['imageItems', 'width', 'subtitleTop', 'subtitleBottom'],
@@ -39,7 +41,7 @@ export default {
       }
       return height * this.width / width || 0
     },
-    draw() {
+    draw: _.debounce(function() {
       let canvas = this.$refs.canvas;
       [canvas.width, canvas.height] = [this.width, this.height]
       if (canvas.height == 0) {
@@ -67,7 +69,7 @@ export default {
       }
 
       this.imageSrc = canvas.toDataURL()
-    }
+    }, 500)
   }
 }
 </script>
