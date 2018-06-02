@@ -1,24 +1,31 @@
 <template>
   <div>
     <draggable v-model="items">
-      <b-card v-for="(item, index) in items" :key="item.image.src" draggable="true">
+      <b-card class="mb-3" v-for="(item, index) in items" :key="item.image.src" draggable="true">
+        <b-row class="mb-3">
+          <b-col>
+            #{{ index + 1 }}
+          </b-col>
+        </b-row>
         <b-row>
-          <b-col sm="4">
+          <b-col cols="12" md="4" class="mb-3 mb-md-0">
             <b-img :src="item.image.src" fluid />
           </b-col>
-          <b-col sm="8">
+          <b-col cols="12" md="8">
             <b-form-checkbox v-model="item.isSubtitleFrame">{{ $t('imageList.subtitleFrame') }}</b-form-checkbox>
+            <b-button variant="primary" @click="moveUpItem(index)" :disabled="index <= 0">{{ $t('imageList.moveUp') }}</b-button>
+            <b-button variant="primary" @click="moveDownItem(index)" :disabled="index >= items.length - 1">{{ $t('imageList.moveDown') }}</b-button>
             <b-button variant="danger" @click="removeItem(index)">{{ $t('imageList.remove') }}</b-button>
           </b-col>
         </b-row>
       </b-card>
     </draggable>
 
-    <b-card>
-      <div class="add-file" @dragover="onDragOver" @drop.prevent="acceptFiles($event.dataTransfer.files)">
-        <p>
-          {{ $t('imageList.addImages') }}
+    <b-card class="mb-3">
+      <div class="add-file mb-3" @dragover="onDragOver" @drop.prevent="acceptFiles($event.dataTransfer.files)">
+        <p class="text-secondary text-center align-middle">
           <b-link @click="$refs.fileInput.click()">{{ $t('imageList.selectImages') }}</b-link>
+          {{ $t('imageList.addImages') }}
         </p>
         <input type="file" ref="fileInput" @change="acceptFiles($event.target.files)" accept="image/jpg,image/jpeg,image/png" style="display: none;" multiple="multiple">
       </div>
@@ -79,6 +86,12 @@ export default {
         })
       }
     },
+    moveUpItem(index) {
+      this.items.splice(index - 1, 2, this.items[index], this.items[index - 1])
+    },
+    moveDownItem(index) {
+      this.items.splice(index, 2, this.items[index + 1], this.items[index])
+    },
     removeItem(index) {
       URL.revokeObjectURL(this.items[index].image.src)
       this.items.splice(index, 1)
@@ -99,23 +112,15 @@ export default {
 </script>
 
 <style scoped>
-.card {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
 .add-file {
-  margin-bottom: 10px;
-  height: 65px;
+  height: 5rem;
   border: 2px dashed #ccc;
   background-color: #fafbfc;
+  overflow: hidden;
 }
 
 .add-file p {
-  font-size: 14px;
-  color: #586069;
-  text-align: center;
-  line-height: 65px;
+  line-height: calc(5rem - 4px);
 }
 </style>
 

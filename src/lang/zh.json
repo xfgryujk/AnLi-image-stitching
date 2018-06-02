@@ -1,7 +1,7 @@
 {
     "navbar": {
         "about": "关于",
-        "aboutContent": "<p>AnLi是针对带字幕的视频的拼图web app，没错，它就是用来安利番剧的。它可以把视频截图拼成“关键帧+字幕帧”的形式。 <a target=\"_blank\" href=\"https://raw.githubusercontent.com/xfgryujk/AnLi-image-stitching/master/demo/result.png\">demo</a></p><p>使用方法：拖放或选择图片文件来添加图片；可以拖拽已添加的图片来排序；设置好字幕帧和图片宽度等参数后就会自动生成结果图片。</p><p>图片生成完全在前端完成，感谢HTML5、Vue、BootstrapVue和GitHub Pages。只在Chrome和Edge下测试过，如果不能用请使用最新的Chrome浏览器。</p><p>作者：xfgryujk。 <a target=\"_blank\" href=\"https://github.com/xfgryujk/AnLi-image-stitching\">获取源码</a></p>"
+        "aboutContent": "<p>AnLi是针对带字幕的视频的拼图web app，没错，它就是用来安利番剧的。它可以把视频截图拼成“关键帧+字幕帧”的形式。 <a target=\"_blank\" href=\"https://raw.githubusercontent.com/xfgryujk/AnLi-image-stitching/master/demo/result.png\">demo</a></p><p>使用方法：拖放或选择图片文件来添加图片；可以拖拽已添加的图片来排序；设置好字幕帧和图片宽度等参数后就会自动生成结果图片。</p><p>图片生成完全在前端完成，只在Chrome和Edge下测试过，如果不能用请使用最新的Chrome浏览器。</p><p>作者：xfgryujk。 <a target=\"_blank\" href=\"https://github.com/xfgryujk/AnLi-image-stitching\">获取源码</a></p>"
     },
     "app": {
         "images": "图片",
@@ -13,9 +13,11 @@
     },
     "imageList": {
         "subtitleFrame": "字幕帧",
+        "moveUp": "上移",
+        "moveDown": "下移",
         "remove": "删除",
-        "addImages": "将图片文件拖到这里添加图片或",
-        "selectImages": "选择文件",
+        "selectImages": "选择图片",
+        "addImages": "或将图片文件拖到这里",
         "clear": "清除图片",
         "inverse": "反选字幕帧"
     }

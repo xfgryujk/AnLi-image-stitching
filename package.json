@@ -1,7 +1,7 @@
 {
   "name": "anli-image-stitching",
   "version": "1.0.0",
-  "description": "A image stitching web app, which aims to stitch screenshots in video with subtitles.",
+  "description": "An image stitching web app, which aims to stitch screenshots in video with subtitles.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --open --config webpack.dev.js",
@@ -41,6 +41,7 @@
   },
   "dependencies": {
     "bootstrap-vue": "^2.0.0-rc.6",
+    "downloadjs": "^1.4.7",
     "lodash": "^4.17.10",
     "vue": "^2.5.16",
     "vue-i18n": "^7.6.0",

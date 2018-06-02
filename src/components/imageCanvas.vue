@@ -1,8 +1,5 @@
 <template>
-  <div>
-    <canvas ref="canvas" style="display: none;"></canvas>
-    <b-img :src="imageSrc" fluid />
-  </div>
+  <b-img center :src="imageSrc" fluid />
 </template>
 
 <script>
@@ -13,7 +10,8 @@ export default {
   props: ['imageItems', 'width', 'subtitleTop', 'subtitleBottom'],
   data() {
     return {
-      imageSrc: ''
+      imageSrc: '',
+      canvas: document.createElement('canvas')
     }
   },
   computed: {
@@ -42,15 +40,14 @@ export default {
       return height * this.width / width || 0
     },
     draw: _.debounce(function() {
-      let canvas = this.$refs.canvas;
-      [canvas.width, canvas.height] = [this.width, this.height]
-      if (canvas.height == 0) {
+      [this.canvas.width, this.canvas.height] = [this.width, this.height]
+      if (this.canvas.height == 0) {
         this.imageSrc = ''
         this.$emit('update:imageSrc', this.imageSrc)
         return
       }
 
-      let ctx = canvas.getContext('2d')
+      let ctx = this.canvas.getContext('2d')
       let y = 0
       for (let item of this.imageItems) {
         let dh = this.getImageHeightToDraw(item)
@@ -69,7 +66,7 @@ export default {
         y += dh
       }
 
-      this.imageSrc = canvas.toDataURL()
+      this.imageSrc = this.canvas.toDataURL()
       this.$emit('update:imageSrc', this.imageSrc)
     }, 500)
   }

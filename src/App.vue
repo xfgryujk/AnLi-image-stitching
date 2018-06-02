@@ -1,5 +1,5 @@
 <template>
-  <b-container class="content">
+  <b-container class="py-3 px-md-3 px-lg-5">
     <h1>{{ $t('app.images') }}</h1>
     <image-list :items.sync="imageItems"></image-list>
 
@@ -10,12 +10,10 @@
       <label for="subtitle-top">{{ $t('app.subtitleTop') }}</label>
       <b-form-input type="number" id="subtitle-top" v-model="subtitleTop"></b-form-input>
       <label for="subtitle-bottom">{{ $t('app.subtitleBottom') }}</label>
-      <b-form-input type="number" id="subtitle-bottom" v-model="subtitleBottom"></b-form-input>
-      <b-button variant="primary" @click="saveImage()" :disabled="!resultImageSrc">{{ $t('app.save') }}</b-button>
+      <b-form-input class="mb-3" type="number" id="subtitle-bottom" v-model="subtitleBottom"></b-form-input>
+      <b-button class="mb-3" variant="primary" @click="saveImage()" :disabled="!resultImageSrc">{{ $t('app.save') }}</b-button>
 
-      <center class="result-image">
-        <image-canvas :imageItems="imageItems" :width="imageWidth" :subtitleTop="subtitleTopFloat" :subtitleBottom="subtitleBottomFloat" :imageSrc.sync="resultImageSrc"></image-canvas>
-      </center>
+      <image-canvas :imageItems="imageItems" :width="imageWidth" :subtitleTop="subtitleTopFloat" :subtitleBottom="subtitleBottomFloat" :imageSrc.sync="resultImageSrc"></image-canvas>
     </b-card>
   </b-container>
 </template>
@@ -59,21 +57,8 @@ export default {
 </script>
 
 <style scoped>
-.content {
-  margin-top: 10px;
-  margin-bottom: 20px;
-}
-
-.content h1 {
-  padding-top: 15px;
-  padding-bottom: 15px;
-}
-
-button {
-  margin-top: 15px;
-}
-
-.result-image {
-  margin-top: 15px;
+h1 {
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
 }
 </style>
